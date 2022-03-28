@@ -1,0 +1,54 @@
+# config 파일에 대하여
+#   config 파일에는
+#     딥러닝 모델
+#     손실 함수
+#     옵티마이저
+#     하이퍼파라미터
+#     에폭
+#   등 모든 것들이 담겨져 있다.
+#   뭔가 모델을 바꾸거나 에폭을 바꾸고 싶을 때는 여기서 해당 이름에 대응하는
+#   값만 조정하면 된다.
+
+#   단, 모델, 손실 함수, 옵티마이저의 경우
+#   내가 원하는 것의 이름으로 변경 해당 모델, 손실함수, 옵티마이저 파일에
+#   정의되어 있어야 한다.
+
+---
+ 
+  use_cuda: true
+  epoch: 100
+  train_batch_size: 64
+  test_batch_size: 64
+  learning_rate: 0.001
+  dataset_name: "CIFAR10"
+  is_trained: false
+  
+  # train_dataset
+  # test_dataset
+  # 은 CIFAR10 Dataloader에서만 작업할 것이므로 pass
+
+  num_workers: 2
+  train_dataset_shuffle: True
+  test_dataset_shuffle: False
+  data_loader_name: 'data_load_only_normalizing'
+  
+  model: "VGG11"
+  loss: "CrossEntropyLoss"
+  optimizer: "Adam"
+  scheduler: 'ExponentialLR'
+  momentum: 0.9
+  weight_decay : 0.01
+  metrics: "accuracy_score"
+
+
+  VGG_types: {
+    'VGG11' : [64, 'M', 128, 'M', 256, 256, 'M', 512, 512, 'M', 512, 512, 'M'],
+    'VGG13' : [64,64, 'M', 128, 128, 'M', 256, 256, 'M', 512,512, 'M', 512,512,'M'],
+    'VGG16' : [64,64, 'M', 128, 128, 'M', 256, 256,256, 'M', 512,512,512, 'M',512,512,512,'M'],
+    'VGG19' : [64,64, 'M', 128, 128, 'M', 256, 256,256,256, 'M', 512,512,512,512, 'M',512,512,512,512,'M']
+  }
+  
+
+
+  # momentum이랑 weight_decay 정의하기
+  

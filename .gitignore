@@ -1,0 +1,22 @@
+*.png
+*.pyc
+*.0
+
+
+# Chapter03 gitignore
+Chapter03/cifar10/
+Chapter03/runs/
+Chapter03/save/
+
+
+# Chapter04 gitignore
+Chapter04/dataset/
+Chapter04/runs/
+Chapter04/save/
+Chapter04/final_result/
+
+
+
+Chapter04/runs/VGG11_2022-03-24_08:44:43
+Chapter04/runs/VGG11_2022-03-24_11:02:16
+Chapter04/runs/VGG11_2022-03-24_13:32:10
