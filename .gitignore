@@ -1,3 +1,10 @@
 Chapter03/cifar10/
 Chapter03/save/
 Chapter03/runs/
+
+Chapter04/__pycache__/
+Chapter04/dataset/
+Chapter04/final_result/
+Chapter04/runs/
+Chapter04/save/
+*.pyc
