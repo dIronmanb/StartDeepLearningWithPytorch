@@ -7,4 +7,8 @@ Chapter04/dataset/
 Chapter04/final_result/
 Chapter04/runs/
 Chapter04/save/
+
+Chapter05/save/
+Chapter05/runs/
+
 *.pyc

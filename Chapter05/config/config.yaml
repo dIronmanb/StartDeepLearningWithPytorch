@@ -1,0 +1,39 @@
+
+
+
+---
+  use_cuda: true
+  epoch: 100
+  train_batch_size: 64
+  test_batch_size: 64
+  learning_rate: 0.001
+  dataset_name: "CIFAR10"
+  is_trained: false
+  
+  # train_dataset
+  # test_dataset
+  # 은 CIFAR10 Dataloader에서만 작업할 것이므로 pass
+
+  num_workers: 0
+  train_dataset_shuffle: True
+  test_dataset_shuffle: False
+  data_loader_name: 'data_load_normalizing_and_agumentation'
+  
+  model: "VGG11_Dilated"
+  loss: "CrossEntropyLoss"
+  optimizer: "Adam"
+  scheduler: 'ExponentialLR'
+  momentum: 0.9
+  weight_decay : 0.01
+  metrics: "accuracy_score"
+
+
+  VGG_types: {
+    'VGG11' : [64, 'M', 128, 'M', 256, 256, 'M', 512, 512, 'M', 512, 512, 'M'],
+    'VGG11_Dilated': ['D64','D128', 'D256', 'D256', 'D512', 'D512', 'D512', 'D512'],
+    
+    'VGG13' : [64,64, 'M', 128, 128, 'M', 256, 256, 'M', 512,512, 'M', 512,512,'M'],
+    'VGG16' : [64,64, 'M', 128, 128, 'M', 256, 256,256, 'M', 512,512,512, 'M',512,512,512,'M'],
+    'VGG19' : [64,64, 'M', 128, 128, 'M', 256, 256,256,256, 'M', 512,512,512,512, 'M',512,512,512,512,'M']
+    
+  }
